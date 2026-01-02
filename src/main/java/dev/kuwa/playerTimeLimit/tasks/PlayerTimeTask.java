@@ -118,8 +118,6 @@ public class PlayerTimeTask {
 			return;
 		}
 
-		if (!Bukkit.getServer().getBukkitVersion().startsWith("1.9")) return;
-
 		PlayerManager playerManager = plugin.getPlayerManager();
 		int timeLimit = playerManager.getTimeLimitPlayer(player);
 		MensajesManager msgManager = plugin.getMensajesManager();
