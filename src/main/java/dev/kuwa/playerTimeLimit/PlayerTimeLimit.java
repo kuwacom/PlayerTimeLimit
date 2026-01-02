@@ -265,7 +265,7 @@ public class PlayerTimeLimit extends JavaPlugin {
 					} catch (Exception ignored) {}
 				}
 
-				final String latestversion = remoteVersion;
+				latestversion = remoteVersion;
 				if (latestversion == null) {
 					// couldn't detect; log a friendly message on main thread
 					Bukkit.getScheduler().runTask(this, () ->
