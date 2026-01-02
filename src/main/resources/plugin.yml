@@ -1,6 +1,6 @@
 main: dev.kuwa.playerTimeLimit.PlayerTimeLimit
 name: PlayerTimeLimit
-version: '1.7.0'
+version: '1.7.1'
 api-version: '1.21'
 author: kuwadev
 softdepend: [Multiverse-Core,PlaceholderAPI]

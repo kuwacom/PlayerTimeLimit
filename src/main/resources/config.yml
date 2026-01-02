@@ -1,33 +1,137 @@
+# Whether the plugin should notify OP players about new updates
+# when they join the server.
+# プラグインの更新があった場合、OP権限を持つプレイヤーに
+# サーバー参加時に通知するかどうか。
 update_notification: true
+
+
+# Defines the daily playtime limits (in seconds) for each group.
+# You can create multiple groups and assign them using:
+# playertimelimit.limit.<group>
+# The "default" and "op" groups do not require permissions.
+# Set the value to 0 to disable the time limit.
+#
+# 各グループごとの1日のプレイ時間制限（秒）を定義します。
+# 複数のグループを作成でき、以下の権限で割り当てます：
+# playertimelimit.limit.<group>
+# default と op グループは権限不要です。
+# 0 を指定すると時間制限なしになります。
 time_limits:
   default: 3600
   vip: 7200
   op: 0
+
+
+# World whitelist system allows the time limit to apply
+# only in specific worlds instead of the entire server.
+#
+# ワールドホワイトリストシステムは、
+# サーバー全体ではなく特定のワールドのみ
+# 時間制限を適用するための機能です。
 world_whitelist_system:
+
+  # Enable or disable the world whitelist system.
+  # ワールドホワイトリスト機能を有効にするかどうか。
   enabled: false
+
+  # List of worlds where the time limit is applied.
+  # 時間制限が適用されるワールド一覧。
   worlds:
-  - world
-  - world_nether
-  - world_the_end
+    - world
+    - world_nether
+    - world_the_end
+
+  # If the time limit applies only to specific worlds,
+  # players will not be kicked when time runs out.
+  # Instead, they will be teleported to the coordinates below.
+  # Make sure this destination world is NOT whitelisted.
+  # Format: world;x;y;z;yaw;pitch
+  #
+  # 特定ワールドのみ時間制限をかけている場合、
+  # 時間切れでもプレイヤーはキックされません。
+  # 代わりに以下で指定した座標へテレポートされます。
+  # テレポート先のワールドは必ずホワイトリスト外にしてください。
+  # フォーマット: world;x;y;z;yaw;pitch
   teleport_coordinates_on_kick: spawn;0;60;0;90;0
+
+
+# Time when all players' playtime will reset every day.
+# Format: "HH:MM"
+#
+# 毎日プレイ時間がリセットされる時刻。
+# フォーマット: "HH:MM"
 reset_time: "00:00"
+
+
+# If enabled, the information message will be shown
+# to players the first time they join.
+# Players can disable it later using /ptl message.
+#
+# 有効にすると、初参加時に情報メッセージが表示されます。
+# プレイヤーは後から /ptl message コマンドで非表示にできます。
 information_message_enabled_by_default: true
+
+
+# Interval (in minutes) at which player data is saved.
+#
+# プレイヤーデータを保存する間隔（分）。
 data_save_time: 5
+
+
+# Whether the remaining time message should be shown
+# in the action bar.
+#
+# 残り時間のメッセージをアクションバーに表示するかどうか。
 action_bar: false
+
+
+# Boss bar display settings for remaining playtime.
+# Only available in Minecraft 1.9+.
+#
+# 残りプレイ時間をボスバーに表示する設定。
+# Minecraft 1.9以降でのみ有効。
 boss_bar:
+
+  # Enable or disable the boss bar.
+  # ボスバーを有効にするかどうか。
   enabled: true
-  color: RED
+
+  # Color of the boss bar.
+  # Available colors:
+  # PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+  #
+  # ボスバーの色。
+  color: BLUE
+
+  # Style of the boss bar.
+  # Available styles:
+  # SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20
+  #
+  # ボスバーの表示スタイル。
   style: SEGMENTED_10
+
+
+# Notification messages sent when a player reaches
+# a specific remaining playtime (in seconds).
+#
+# 残りプレイ時間が指定秒数になったときに
+# プレイヤーへ送信される通知メッセージ。
 notification:
+
+  # Message sent when 60 seconds remain.
+  # 残り60秒になったときの通知。
   60:
     message:
-    - ""
-    - "{centered}&c&lWARNING!"
-    - "{centered}&cYou have &71 minute &cleft to play on the server."
-    - ""
+      - ""
+      - "{centered}&c&lWARNING!"
+      - "{centered}&cYou have &71 minute &cleft to play on the server."
+      - ""
+
+  # Message sent when 30 seconds remain.
+  # 残り30秒になったときの通知。
   30:
     message:
-    - ""
-    - "{centered}&c&lWARNING!"
-    - "{centered}&cYou have &730 seconds &cleft to play on the server."
-    - ""
+      - ""
+      - "{centered}&c&lWARNING!"
+      - "{centered}&cYou have &730 seconds &cleft to play on the server."
+      - ""
