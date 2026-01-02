@@ -1,0 +1,11 @@
+main: dev.kuwa.playerTimeLimit.PlayerTimeLimit
+name: PlayerTimeLimit
+version: '1.7.0'
+api-version: '1.21'
+author: kuwadev
+softdepend: [Multiverse-Core,PlaceholderAPI]
+
+commands:
+  playertimelimit:
+    description: Main command of PlayerTimeLimit
+    aliases: [ptl]
